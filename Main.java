@@ -90,29 +90,62 @@ class Main {
       instructionsButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { //checks for button click
-          cl.show(infoRetreival.getPanelCont(), "2"); //shows next panel on button click
+          cl.show(infoRetreival.getPanelCont(), "2"); //shows instruction panel on button click
         }
       });
 
       // INSTRUCTIONS PANEL
 
       JPanel instructionsPanel = new JPanel();
+      instructionsPanel.setLayout(null); //set layout to null to allow movement of attributes
 
+      JLabel instruction1 = new JLabel("1. Click either Checker or Creator.");
+      instruction1.setFont(new Font("Verdana", Font.PLAIN, 15));
+      instruction1.setBounds(25, 40, 400, 100);
+      instructionsPanel.add(instruction1);
+
+      JLabel instruction2 = new JLabel("<html>2. Checker will ask for your password and return<br/>how good it is to you and what you are missing.</html>");
+      instruction2.setFont(new Font("Verdana", Font.PLAIN, 15)); //<html> is used to create a new line 
+      instruction2.setBounds(25, 90, 400, 100);
+      instructionsPanel.add(instruction2);
+
+      JLabel instruction3 = new JLabel("<html>3. Creator will create a password for you randomly<br/>or create one based off of certain questions.</html>");
+      instruction3.setFont(new Font("Verdana", Font.PLAIN, 15));
+      instruction3.setBounds(25, 150, 400, 100);
+      instructionsPanel.add(instruction3);
+
+      JButton backButton = new JButton("Back"); //declaring button
+      backButton.setBounds(150, 280, 150, 25);
+      backButton.setFocusable(false); //removing focus on button
+      instructionsPanel.add(backButton);
+
+      backButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent arg0) { //checks for button click
+          cl.show(infoRetreival.getPanelCont(), "1"); //shows main menu panel on button click
+        }
+      });
 
       // CHECKER PANEL 
 
       JPanel checkerPanel = new JPanel();
+      checkerPanel.setLayout(null);
 
       checkerButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { //checks for button click
-          cl.show(infoRetreival.getPanelCont(), "3"); //shows checher panel on button click
+          cl.show(infoRetreival.getPanelCont(), "3"); //shows checker panel on button click
+
+          PChecker checking = new PChecker();
+          checking.passwordchecker();
+          
         }
       });
 
       // CREATOR PANEL
 
       JPanel creatorPanel = new JPanel();
+      creatorPanel.setLayout(null);
 
       creatorButton.addActionListener(new ActionListener() {
         @Override
@@ -125,13 +158,12 @@ class Main {
       // FINAL PANEL
 
       JPanel finalPanel = new JPanel(); //creating final panel
-      finalPanel.setLayout(null); //set layout to null to allow movement of attributes
+      finalPanel.setLayout(null);
 
       //Labels to display on final panel
-      
       JLabel restartLabel = new JLabel("Restart?"); 
       restartLabel.setFont(new Font("Verdana", Font.PLAIN, 25));
-      restartLabel.setBounds(25, 50, 400, 100);
+      restartLabel.setBounds(150, 50, 400, 100);
       finalPanel.add(restartLabel);
 
       JButton quitButton = new JButton("Quit"); //quit button to exit program
@@ -165,7 +197,7 @@ class Main {
       infoRetreival.getPanelCont().add(checkerPanel, "3"); //adds checker panel to main panel
       infoRetreival.getPanelCont().add(creatorPanel, "4"); //adds creator panel to main panel
       infoRetreival.getPanelCont().add(finalPanel, "5"); //adds final panel to main panel
-      cl.show(infoRetreival.getPanelCont(), "1"); //shows first panel on game start
+      cl.show(infoRetreival.getPanelCont(), "1"); //shows first panel on program start
 
     }
   }
