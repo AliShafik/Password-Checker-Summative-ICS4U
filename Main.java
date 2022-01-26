@@ -3,9 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-//Import for scanner for user input
-import java.util.Scanner;
-
 class Main {
 
   //Class for layout to manage panels and frame
@@ -15,7 +12,7 @@ class Main {
     public class infoToRetreive {
       private JPanel panelCont = new JPanel(); //main panel
       private CardLayout cl = new CardLayout(); //card layout to manage all panels
-      private JFrame startFrame = new JFrame("Password Maker and Creator"); //main frame 
+      private JFrame startFrame = new JFrame("Password Checker and Creator"); //main frame 
 
       //Getters for main frame, main panel and card layout
       public CardLayout getcl() {
@@ -32,9 +29,6 @@ class Main {
     }
 
     public CLayout() {
-
-      //Scanner class for user input
-      Scanner input = new Scanner(System.in);
 
       //Retrieving info from class above to re-use
       infoToRetreive infoRetreival = new infoToRetreive();
@@ -61,9 +55,9 @@ class Main {
       mainMenuPanel.setLayout(null); //setting layout to null to allow for movement of items
 
       //Labels to display on starting label
-      JLabel programTitle = new JLabel("Password Maker and");//declaring label
+      JLabel programTitle = new JLabel("Password Checker and");//declaring label
       programTitle.setFont(new Font("Verdana", Font.PLAIN, 35)); //setting font and font size of label
-      programTitle.setBounds(50, 70, 400, 50); //setting the location of label
+      programTitle.setBounds(30, 70, 400, 50); //setting the location of label
       mainMenuPanel.add(programTitle); //adding label to panel
 
       JLabel programTitle2 = new JLabel("Creator");
@@ -87,6 +81,24 @@ class Main {
       mainMenuPanel.add(creatorButton);
 
       //Action Listener to scan button action
+      checkerButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent arg0) { //checks for button click
+          cl.show(infoRetreival.getPanelCont(), "3"); //shows final panel on button click
+
+          PChecker checking = new PChecker();
+          checking.passwordchecker(); //activates password checker
+          
+        }
+      });
+
+      creatorButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent arg0) { //checks for button click
+          cl.show(infoRetreival.getPanelCont(), "3"); //shows final panel on button click
+        }
+      });
+
       instructionsButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { //checks for button click
@@ -126,35 +138,6 @@ class Main {
         }
       });
 
-      // CHECKER PANEL 
-
-      JPanel checkerPanel = new JPanel();
-      checkerPanel.setLayout(null);
-
-      checkerButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent arg0) { //checks for button click
-          cl.show(infoRetreival.getPanelCont(), "3"); //shows checker panel on button click
-
-          PChecker checking = new PChecker();
-          checking.passwordchecker();
-          
-        }
-      });
-
-      // CREATOR PANEL
-
-      JPanel creatorPanel = new JPanel();
-      creatorPanel.setLayout(null);
-
-      creatorButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent arg0) { //checks for button click
-          cl.show(infoRetreival.getPanelCont(), "4"); //shows creator panel on button click
-        }
-      });
-
-
       // FINAL PANEL
 
       JPanel finalPanel = new JPanel(); //creating final panel
@@ -163,7 +146,7 @@ class Main {
       //Labels to display on final panel
       JLabel restartLabel = new JLabel("Restart?"); 
       restartLabel.setFont(new Font("Verdana", Font.PLAIN, 25));
-      restartLabel.setBounds(150, 50, 400, 100);
+      restartLabel.setBounds(170, 50, 400, 100);
       finalPanel.add(restartLabel);
 
       JButton quitButton = new JButton("Quit"); //quit button to exit program
@@ -194,9 +177,7 @@ class Main {
 
       infoRetreival.getPanelCont().add(mainMenuPanel, "1"); //adds starting panel to main panel
       infoRetreival.getPanelCont().add(instructionsPanel, "2"); //adds instructions panel to main panel
-      infoRetreival.getPanelCont().add(checkerPanel, "3"); //adds checker panel to main panel
-      infoRetreival.getPanelCont().add(creatorPanel, "4"); //adds creator panel to main panel
-      infoRetreival.getPanelCont().add(finalPanel, "5"); //adds final panel to main panel
+      infoRetreival.getPanelCont().add(finalPanel, "3"); //adds final panel to main panel
       cl.show(infoRetreival.getPanelCont(), "1"); //shows first panel on program start
 
     }
