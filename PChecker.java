@@ -10,6 +10,8 @@ public class PChecker {
     int uppCase = 0;// amount of upper cases in password
 
     Scanner scnr = new Scanner(System.in);
+    System.out.println("Welcome to the Passowrd checker ");
+    System.out.println("You could use lower & upper case characters, digits and the ! and ? symbols");
     System.out.println("Please enter your password: ");
     String password = scnr.nextLine(); // detects user input for a password string
 
