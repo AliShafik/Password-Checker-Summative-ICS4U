@@ -97,7 +97,7 @@ class PCreator {
 		}
 	}
 
-	//function that randomly generates a letter (lowercase or uppercase) or number (0-9) using ASCII
+	//function that randomly generates a letter (lowercase or uppercase) or number (0-9) or special character using ASCII
 	public static char randomCharacter() {
 		//We multiply Math.random() by 127 because there are 126 characters we are trying to choose from
 		//This random number has values between 0 (inclusive) and 127 (exclusive)
