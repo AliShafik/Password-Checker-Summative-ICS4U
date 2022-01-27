@@ -4,6 +4,7 @@ This program Uses GUI to give the user options to either create or check a passw
 -----------------------------------------------------------*/
 
 //Imports for java swing
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
