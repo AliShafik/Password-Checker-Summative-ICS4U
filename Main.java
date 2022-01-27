@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------
+/*----------------------------------------------------------
 PROGRAM DESCRIPTION: 
 This program Uses GUI to give the user options to either create or check a password. There is an instruction tab to tell the user how to use the program. If the user clicks check, the program asks the user for their password and it will check how good it is for them and output their result. If the user clicks create, the user will be asked to answer some questions to create some passwords based off of the answers and output them.
 -----------------------------------------------------------*/
