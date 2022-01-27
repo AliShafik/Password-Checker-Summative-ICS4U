@@ -13,7 +13,7 @@ public class PChecker {
     System.out.println("Please enter your password: ");
     String password = scnr.nextLine(); // detects user input for a password string
 
-    if (password.length() > minLength && password.length() <= maxLength) {
+    if (password.length() >= minLength && password.length() <= maxLength) {
       for (int i = 0; i < password.length(); i++) {
         char checker = password.charAt(i);
         if (Character.isUpperCase(checker)) {

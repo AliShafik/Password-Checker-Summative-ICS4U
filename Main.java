@@ -1,8 +1,6 @@
 /*-----------------------------------------------------------
-PROGRAM DESCRIPTION:
-
-
-
+PROGRAM DESCRIPTION: 
+This program Uses GUI to give the user options to either create or check a password. There is an instruction tab to tell the user how to use the program. If the user clicks check, the program asks the user for their password and it will check how good it is for them and output their result. If the user clicks create, the user will be asked to answer some questions to create some passwords based off of the answers and output them.
 -----------------------------------------------------------*/
 
 //Imports for java swing
@@ -91,6 +89,7 @@ class Main {
       checkerButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { // checks for button click
+
           cl.show(infoRetreival.getPanelCont(), "3"); // shows final panel on button click
 
           PChecker checking = new PChecker();
@@ -102,13 +101,18 @@ class Main {
       creatorButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { // checks for button click
+
           cl.show(infoRetreival.getPanelCont(), "3"); // shows final panel on button click
+
+          PCreator create = new PCreator();
+          create.passCreator(); //activates password creator 
         }
       });
 
       instructionsButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent arg0) { // checks for button click
+        
           cl.show(infoRetreival.getPanelCont(), "2"); // shows instruction panel on button click
         }
       });
@@ -130,7 +134,7 @@ class Main {
       instructionsPanel.add(instruction2);
 
       JLabel instruction3 = new JLabel(
-          "<html>3. Creator will create a password for you randomly<br/>or create one based off of certain questions.</html>");
+          "<html>3. Creator will create passwords for you randomly<br/>based off of some questions.</html>");
       instruction3.setFont(new Font("Verdana", Font.PLAIN, 15));
       instruction3.setBounds(25, 150, 400, 100);
       instructionsPanel.add(instruction3);
