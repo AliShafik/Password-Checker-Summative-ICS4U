@@ -59,34 +59,34 @@ public class PChecker {
       }
 
 
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase > 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase > 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
         System.out.println("You need digits in your password");
         }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase == 0 && uppCase > 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase == 0 && uppCase > 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
         System.out.println("You need lower cases in your password");
         }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need Upper cases in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need Upper cases in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase == 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase == 0 && uppCase == 0 && digit > 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need Upper & lower cases in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase == 0 && uppCase > 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase == 0 && uppCase > 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need lower cases & digits in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase == 0 && uppCase > 0 && digit > 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase == 0 && uppCase > 0 && digit > 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need lower cases & special characters in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase == 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase == 0 && digit == 0&& special > 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need Upper cases & digits in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase == 0 && digit > 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need Upper cases & special in your password");
     }
-    else if (password.length() >= minLength && password.length() < maxLength && lowCase > 0 && uppCase > 0 && digit == 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
+    else if (password.length() >= minLength && password.length() <= maxLength && lowCase > 0 && uppCase > 0 && digit == 0&& special == 0) {// outputs password requirment if password is missing a special character and a digit
     System.out.println("You need digits & special characters in your password");
     }
 
